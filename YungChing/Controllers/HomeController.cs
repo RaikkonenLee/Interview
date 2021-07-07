@@ -16,6 +16,15 @@ namespace YungChing.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            using (var dbContext = new NorthwindContext())
+            {
+                var orders = dbContext.Orders.Take(10);
+                foreach (var order in orders)
+                {
+                    
+                }
+            }
+
         }
 
         public IActionResult Index()
